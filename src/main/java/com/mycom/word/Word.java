@@ -60,4 +60,7 @@ public class Word { // 데이터를 다루기 위해서 만드는 클래스
                 + String.format("%15s", word) + " " + meaning;
         return str;
     }
+    public String toFileString(){
+        return this.level + "|" + this.word + "|" + this.meaning;
+    }
 }

@@ -25,16 +25,38 @@ public class WordManager { // CRUD기능을 구현하는 전체적인 관리 역
         return s.nextInt(); // 사용자에게서 원하는 메뉴 받아오기
     }
     public void start(){
+
+        wordCRUD.loadFile();
         while(true) {
             int menu = selectMenu(); // 리턴된 값을 그대로 출력
             if(menu == 0) break;
             if(menu == 4){
                 // 데이터를 추가하는 구문
-                wordCRUD.addWord();
+                wordCRUD.addItem();
             }
             else if(menu == 1){
                 // 리스트를 보여주는 구문
                 wordCRUD.listAll();
+            }
+            else if(menu == 2){
+                // 리스트를 보여주는 구문
+                wordCRUD.searchLevel();
+            }
+            else if(menu == 3){
+                // 리스트를 보여주는 구문
+                wordCRUD.searchWord();
+            }
+            else if(menu == 5){
+                // 데이터를 수정하는 부분
+                wordCRUD.updatItem();
+            }
+            else if(menu == 6){
+                // 데이터를 삭제하는 부분
+                wordCRUD.deleteItem();
+            }
+            else if(menu == 7){
+                // 데이터를 파일에 저장하는 부분
+                wordCRUD.saveFile();
             }
         }
     }
